@@ -97,17 +97,15 @@ function PayloadRow({ name, payload, ip, port }) {
     <tr>
       <td className={styles.name}>{name}</td>
       <td className={styles.payload}>
-        {payload}{" "}
-        <button
-          className={styles.copyToClip}
+        <span
+          className={styles.copyText}
           onClick={() => {
             navigator.clipboard.writeText(payloadToCopy);
-            setCopyBtnText("Copied!");
-            setTimeout(() => setCopyBtnText("Copy"), 1000);
+            toast.success("Copied!", { autoClose: 1000 });
           }}
         >
-          {copyBtnText}
-        </button>
+          {payload}
+        </span>
       </td>
     </tr>
   );
@@ -202,6 +200,7 @@ export default function RevShells() {
                 className={styles.zshSTTY}
                 onClick={() => {
                   navigator.clipboard.writeText("stty raw -echo; fg");
+                  toast.success("Copied!", { autoClose: 1000 });
                 }}
               >
                 stty raw -echo; fg
@@ -212,6 +211,7 @@ export default function RevShells() {
                 className={styles.zshSTTY}
                 onClick={() => {
                   navigator.clipboard.writeText("export TERM=xterm");
+                  toast.success("Copied!", { autoClose: 1000 });
                 }}
               >
                 export TERM=xterm
@@ -222,6 +222,7 @@ export default function RevShells() {
                 className={styles.zshSTTY}
                 onClick={() => {
                   navigator.clipboard.writeText("stty rows 24 columns 80");
+                  toast.success("Copied!", { autoClose: 1000 });
                 }}
               >
                 stty rows &lt;num&gt; columns &lt;cols&gt;

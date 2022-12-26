@@ -61,26 +61,18 @@
   color: rgba(46, 128, 46, 0.9);
 }
 
-.copyToClip {
-  position: absolute;
-  right: 20px;
-  display: none;
-  border-radius: 5px;
-  border: 2px solid #1172c4;
-  padding: 4px;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-  cursor: pointer;
-}
-
-.payload:hover .copyToClip {
-  display: inline;
-}
-
 .payloadTable th {
   text-align: left;
   padding-bottom: 10px;
   font-size: 1.5rem;
+}
+
+.copyText {
+  cursor: pointer;
+}
+
+.copyText:active {
+  text-decoration: underline;
 }
 
 .highlight {
@@ -135,11 +127,6 @@
 
   .highlight {
     color: #1172c4;
-  }
-
-  .copyToClip {
-    box-shadow: rgba(17, 114, 196, 0.12) 0px 2px 4px 0px,
-      rgba(17, 114, 196, 0.32) 0px 2px 16px 0px;
   }
 
   .name {
