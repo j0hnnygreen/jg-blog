@@ -1,0 +1,129 @@
+.title a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.heading2 {
+  font-size: 1.5rem;
+  color: #093564;
+  text-align: center;
+}
+
+.description {
+  margin: 4rem 0;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  max-width: 900px;
+}
+
+.code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+
+.terminal {
+  max-width: 600px;
+  width: 92%;
+  padding: 20px;
+  background: rgba(204, 204, 204, 0.4);
+  backdrop-filter: blur(7px);
+  border-radius: 10px;
+  font-size: 1.3rem;
+  color: rgb(0, 0, 0);
+}
+
+.terminal p {
+  width: 100%;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+.terminal a {
+  text-decoration: none;
+}
+
+.terminal a:hover {
+  color: #0c55a8;
+}
+
+#span1 {
+  color: rgb(170, 19, 19);
+  font-weight: bold;
+}
+
+#span2 {
+  color: #0a2668;
+  font-weight: bold;
+}
+
+.cursor {
+  background: rgb(56, 56, 56);
+  animation: 1s infinite blink;
+}
+
+@keyframes blink {
+  0% {
+    background: none;
+  }
+  50% {
+    background: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .code {
+    background: #111;
+  }
+
+  .heading2 {
+    color: #99cf23;
+  }
+
+  .terminal {
+    background: rgba(10, 10, 10, 0.7);
+    color: rgb(228, 228, 228);
+  }
+  .cursor {
+    background: white;
+    animation: 1s infinite blink;
+  }
+  #span2 {
+    color: #033dc4;
+  }
+}
