@@ -80,6 +80,31 @@ let TOOLS = [
     url: "/resources/tmux",
     description: "Tmux key bindings, sessions, panes, copy.",
   },
+  {
+    category: "Privilege Escalation",
+    name: "GTFOBins",
+    url: "https://gtfobins.github.io/",
+    description:
+      "GTFOBins is a curated list of Unix binaries that can be used to bypass local security restrictions in misconfigured systems. [PrivEsc using binaries]",
+  },
+  {
+    category: "Privilege Escalation",
+    name: "HackTricks Linux Privilege Escalation",
+    url: "https://book.hacktricks.xyz/linux-hardening/privilege-escalation",
+    description: "Linux Privelege Escalation Techniques. [linux privesc]",
+  },
+  {
+    category: "Privilege Escalation",
+    name: "HackTricks Windows Privilege Escalation",
+    url: "https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation",
+    description: "Windows Privelege Escalation Techniques. [windows privesc]",
+  },
+  {
+    category: "Privilege Escalation",
+    name: "PEASS-ng",
+    url: "https://github.com/carlospolop/PEASS-ng/releases/latest",
+    description: "Scripts to Check Privilege Escalation. [winPeas, linPeas]",
+  },
 ];
 
 TOOLS = sortByCategory(TOOLS);

@@ -71,6 +71,11 @@
   cursor: pointer;
 }
 
+.copyText:hover,
+.zshSTTY:hover {
+  opacity: 80%;
+}
+
 .copyText:active {
   text-decoration: underline;
 }
