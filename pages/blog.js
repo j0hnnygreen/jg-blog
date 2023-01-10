@@ -1,8 +1,11 @@
 import Head from "next/head";
-import { use, useState } from "react";
+import { useState } from "react";
+import BlogsSection from "../components/blogs/blogsSection";
 import Layout, { pageTitles } from "../components/layout";
 import SearchBar from "../components/resources/searchBar";
 import styles from "../styles/Blog.module.css";
+import tableStyles from "../styles/Resources.module.css";
+import BLOGS from "../models/blogs.model";
 
 export default function Blog() {
   const [filterText, setFilterText] = useState("");
@@ -11,7 +14,7 @@ export default function Blog() {
     <div className="container">
       <Layout page="blog">
         <Head>
-          <title>{pageTitles.resources}</title>
+          <title>{pageTitles.blog}</title>
         </Head>
 
         <main className="main">
@@ -21,7 +24,12 @@ export default function Blog() {
             onFilterTextChange={setFilterText}
           />
 
-          <p>No Posts Yet!</p>
+          <div className={tableStyles.toolsDisplay}>
+            <BlogsSection filterText={filterText} blogs={BLOGS} />
+            <div className={styles.bottomHR}>
+              <hr />
+            </div>
+          </div>
         </main>
       </Layout>
     </div>

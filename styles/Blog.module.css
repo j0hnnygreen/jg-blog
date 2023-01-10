@@ -4,3 +4,47 @@
   font-size: 3rem;
   text-align: center;
 }
+
+.blogCards {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  max-width: 800px;
+  width: 92%;
+  background: rgba(196, 196, 196, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+.blogCards em,
+.blogCards b {
+  color: rgb(0, 55, 100);
+}
+
+.terminal {
+  margin: 10px;
+  padding: 10px;
+  color: green;
+  background: black;
+  border-radius: 5px;
+  overflow: scroll;
+}
+
+.terminal code {
+  font-size: 1rem;
+}
+.terminal pre {
+  margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .blogCards {
+    background: rgba(20, 20, 20, 0.5);
+  }
+
+  .blogCards em,
+  .blogCards b {
+    color: #9fef00;
+  }
+}

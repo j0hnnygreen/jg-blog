@@ -10,6 +10,7 @@ export const pageTitles = {
   blog: "Blog",
   revshells: "Reverse Shells",
   tmux: "Tmux",
+  postgresql: "PostgreSQL",
 };
 
 export default function Layout({ children, page }) {

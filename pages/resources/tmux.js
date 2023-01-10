@@ -4,7 +4,6 @@ import { useState } from "react";
 import SearchBar from "../../components/resources/searchBar";
 import TmuxLogo from "../../public/assets/resources/tmux.png";
 import Layout, { pageTitles } from "../../components/layout";
-import styles from "../../styles/Cheatsheets.module.css";
 import resStyles from "../../styles/Resources.module.css";
 import CheatsheetSection from "../../components/resources/cheatsheets";
 import { TMUX } from "../../models/cheatsheets.model";
