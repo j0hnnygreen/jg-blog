@@ -10,7 +10,12 @@ export const pageTitles = {
   blog: "Blog",
   revshells: "Reverse Shells",
   tmux: "Tmux",
-  postgresql: "PostgreSQL",
+  databases: { postgresql: "PostgreSQL" },
+  maths: {
+    quadratic: "Complex Numbers & Quadratic Equations",
+    trigonometry: "Trigonometry",
+  },
+  networking: { osimodel: "OSI Model" },
 };
 
 export default function Layout({ children, page }) {

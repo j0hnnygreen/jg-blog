@@ -40,7 +40,7 @@ Access method: heap
     <div className="container">
       <Layout>
         <Head>
-          <title>{pageTitles.postgresql}</title>
+          <title>{pageTitles.databases.postgresql}</title>
         </Head>
 
         <main className="main">
