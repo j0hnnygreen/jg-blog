@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import BlogCard, { CardTerminal } from "../../components/blogs/blog/blogCards";
 import Layout, { pageTitles } from "../../components/layout";
 import blogStyles from "../../styles/Blog.module.css";
