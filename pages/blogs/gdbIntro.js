@@ -4,7 +4,7 @@ import BlogCard, { CardTerminal } from "../../components/blogs/blog/blogCards";
 import Layout, { pageTitles } from "../../components/layout";
 import blogStyles from "../../styles/Blog.module.css";
 
-export default function ComplexNumAndQuadraticEq() {
+export default function GDBIntro() {
   return (
     <div className="container">
       <Layout>

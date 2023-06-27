@@ -36,6 +36,13 @@ let BLOGS = [
     url: "/blogs/gdbIntro",
     description: "Introduction to GDB.",
   },
+  {
+    category: reversing,
+    name: "x86-64bit Registers",
+    url: "/blogs/intelRegisters64",
+    description:
+      "Quick reference for x86-64 bit Intel General Purpose Registers.",
+  },
 ];
 
 BLOGS = sortByCategory(BLOGS);

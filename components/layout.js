@@ -16,7 +16,7 @@ export const pageTitles = {
     trigonometry: "Trigonometry",
   },
   networking: { osimodel: "OSI Model" },
-  reversing: { gdbintro: "GDB" },
+  reversing: { gdbintro: "GDB", registers64bit: "x86-64bit Registers" },
 };
 
 export default function Layout({ children, page }) {

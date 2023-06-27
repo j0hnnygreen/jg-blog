@@ -50,7 +50,7 @@ Access method: heap
 
           <Link href="https://www.postgresql.org/docs/" target="_blank">
             <Image
-              src="/assets/blogs/postgres/elephant.png"
+              src="/assets/blogs/databases/postgres/elephant.png"
               alt="postgresql logo"
               width={50}
               height={50}
