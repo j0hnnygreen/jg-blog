@@ -145,47 +145,49 @@ export default function Registers64Bit() {
           </BlogCard>
 
           <BlogCard heading="Function Calling Convention">
-            <pre>
-              <table className={blogStyles.dashedTable}>
-                <thead>
-                  <tr>
-                    <th>Platform</th>
-                    <th>Return Value</th>
-                    <th>1st Arg</th>
-                    <th>2nd Arg</th>
-                    <th>3rd Arg</th>
-                    <th>4th Arg</th>
-                    <th>5th Arg</th>
-                    <th>6th Arg</th>
-                    <th>More Args</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Linux</td>
-                    <td>RAX</td>
-                    <td>RDI</td>
-                    <td>RSI</td>
-                    <td>RDX</td>
-                    <td>RCX</td>
-                    <td>R8</td>
-                    <td>R9</td>
-                    <td>Pushed to Stack</td>
-                  </tr>
-                  <tr>
-                    <td>Windows</td>
-                    <td>RAX</td>
-                    <td>RCX</td>
-                    <td>RDX</td>
-                    <td>R8</td>
-                    <td>R9</td>
-                    <td>Pushed to Stack</td>
-                    <td>Pushed to Stack</td>
-                    <td>Pushed to Stack</td>
-                  </tr>
-                </tbody>
-              </table>
-            </pre>
+            <div>
+              <pre>
+                <table className={blogStyles.dashedTable}>
+                  <thead>
+                    <tr>
+                      <th>Platform</th>
+                      <th>Return Value</th>
+                      <th>1st Arg</th>
+                      <th>2nd Arg</th>
+                      <th>3rd Arg</th>
+                      <th>4th Arg</th>
+                      <th>5th Arg</th>
+                      <th>6th Arg</th>
+                      <th>More Args</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Linux</td>
+                      <td>RAX</td>
+                      <td>RDI</td>
+                      <td>RSI</td>
+                      <td>RDX</td>
+                      <td>RCX</td>
+                      <td>R8</td>
+                      <td>R9</td>
+                      <td>Pushed to Stack</td>
+                    </tr>
+                    <tr>
+                      <td>Windows</td>
+                      <td>RAX</td>
+                      <td>RCX</td>
+                      <td>RDX</td>
+                      <td>R8</td>
+                      <td>R9</td>
+                      <td>Pushed to Stack</td>
+                      <td>Pushed to Stack</td>
+                      <td>Pushed to Stack</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </pre>
+            </div>
           </BlogCard>
 
           <BlogCard heading="Further Reading">
