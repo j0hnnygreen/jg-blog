@@ -333,95 +333,87 @@ End of assembler dump.`}
 
           <BlogCard heading="Examine and Modify Registers">
             <h3>Format Specifiers</h3>
-            <p>
+            <ul>
+              <li>
+                <b>x</b>: Print the binary representation of the value in
+                hexadecimal.
+              </li>
+              <li>
+                <b>d</b>: Print the binary representation of the value in
+                decimal.
+              </li>
+              <li>
+                <b>u</b>: Print the binary representation of the value as an
+                decimal, as if it were unsigned.
+              </li>
+              <li>
+                <b>o</b>: Print the binary representation of the value in octal.
+              </li>
+              <li>
+                <b>t</b>: Print the binary representation of the value in
+                binary. The letter 't' stands for "two".
+              </li>
+              <li>
+                <b>c</b>: Cast the value to an integer (unlike other formats,
+                this does not just reinterpret the underlying bits) and print it
+                as a character constant. This prints both the numerical value
+                and its character representation.
+              </li>
+              <li>
+                <b>f</b>: Regard the bits of the value as a floating point
+                number and print using typical floating point syntax.
+              </li>
+              <li>
+                <b>s</b>: Regard as a string, if possible. With this format,
+                pointers to single-byte data are displayed as null-terminated
+                strings and arrays of single-byte data are displayed as
+                fixed-length strings. Other values are displayed in their
+                natural types.
+              </li>
+            </ul>
+            Refer the documentation for more formats{" "}
+            <Link
+              className={blogStyles.extLink}
+              href="https://sourceware.org/gdb/current/onlinedocs/gdb#Output-Formats"
+              target="_blank"
+            >
+              here
+            </Link>
+            .<h3>Examining Memory</h3>
+            The <em>x</em> command can be used to examine memory in any of
+            several formats:
+            <br />
+            <CardTerminal>
+              <pre>x/nfu addr</pre>
+            </CardTerminal>
+            <ol>
+              <li>
+                <b>n</b>: The repeat count is a decimal integer; the default is
+                1.
+              </li>
+              <li>
+                <b>f</b>: The display format is one of the formats used by print
+                ('x', 'd', 'u', 'o', 't', 'a', 'c', 'f', 's'), 'i' (for machine
+                instructions)
+              </li>
+              <li>
+                <b>u</b>: the unit size.
+              </li>
               <ul>
                 <li>
-                  <b>x</b>: Print the binary representation of the value in
-                  hexadecimal.
+                  <b>b</b>: Bytes.
                 </li>
                 <li>
-                  <b>d</b>: Print the binary representation of the value in
-                  decimal.
+                  <b>h</b>: Halfwords (Two Bytes).
                 </li>
                 <li>
-                  <b>u</b>: Print the binary representation of the value as an
-                  decimal, as if it were unsigned.
+                  <b>w</b>: Words (Four Bytes). DEFAULT
                 </li>
                 <li>
-                  <b>o</b>: Print the binary representation of the value in
-                  octal.
-                </li>
-                <li>
-                  <b>t</b>: Print the binary representation of the value in
-                  binary. The letter 't' stands for "two".
-                </li>
-                <li>
-                  <b>c</b>: Cast the value to an integer (unlike other formats,
-                  this does not just reinterpret the underlying bits) and print
-                  it as a character constant. This prints both the numerical
-                  value and its character representation.
-                </li>
-                <li>
-                  <b>f</b>: Regard the bits of the value as a floating point
-                  number and print using typical floating point syntax.
-                </li>
-                <li>
-                  <b>s</b>: Regard as a string, if possible. With this format,
-                  pointers to single-byte data are displayed as null-terminated
-                  strings and arrays of single-byte data are displayed as
-                  fixed-length strings. Other values are displayed in their
-                  natural types.
+                  <b>g</b>: Giant words (Eight Bytes).
                 </li>
               </ul>
-              Refer the documentation for more formats{" "}
-              <Link
-                className={blogStyles.extLink}
-                href="https://sourceware.org/gdb/current/onlinedocs/gdb#Output-Formats"
-                target="_blank"
-              >
-                here
-              </Link>
-              .
-            </p>
-
-            <h3>Examining Memory</h3>
-            <p>
-              The <em>x</em> command can be used to examine memory in any of
-              several formats:
-              <br />
-              <CardTerminal>
-                <pre>x/nfu addr</pre>
-              </CardTerminal>
-              <ol>
-                <li>
-                  <b>n</b>: The repeat count is a decimal integer; the default
-                  is 1.
-                </li>
-                <li>
-                  <b>f</b>: The display format is one of the formats used by
-                  print ('x', 'd', 'u', 'o', 't', 'a', 'c', 'f', 's'), 'i' (for
-                  machine instructions)
-                </li>
-                <li>
-                  <b>u</b>: the unit size.
-                </li>
-                <ul>
-                  <li>
-                    <b>b</b>: Bytes.
-                  </li>
-                  <li>
-                    <b>h</b>: Halfwords (Two Bytes).
-                  </li>
-                  <li>
-                    <b>w</b>: Words (Four Bytes). DEFAULT
-                  </li>
-                  <li>
-                    <b>g</b>: Giant words (Eight Bytes).
-                  </li>
-                </ul>
-              </ol>
-            </p>
-
+            </ol>
             <CardTerminal>
               <pre>
                 <span className={blogStyles.promptLine}>(gdb) x/8xb $rsp</span>
@@ -446,7 +438,6 @@ End of assembler dump.`}
    0x55555555514a <main+21>:	nop`}
               </pre>
             </CardTerminal>
-
             <h3>Modifing Memory</h3>
             <p>
               The <b>set</b> command is used to modify memory, also optionally
@@ -483,7 +474,6 @@ End of assembler dump.`}
               that immediates which are smaller than the size of the specified
               memory write are zero-extended, not sign-extend.
             </p>
-
             <h3>Viewing Registers</h3>
             <p>
               The <b>info registers</b> or <b>info r</b> or <b>i r</b> command
@@ -505,7 +495,7 @@ rcx            0x7ffff7fab718      140737353791256`}
               </pre>
             </CardTerminal>
             <p>
-              The <b>print</b> or <p>p</p> command can also be used with the
+              The <b>print</b> or <b>p</b> command can also be used with the
               format specifier.
             </p>
             <CardTerminal>
@@ -523,7 +513,6 @@ rcx            0x7ffff7fab718      140737353791256`}
               with a $. Also note that the "info r" command required no such
               prefix.
             </p>
-
             <h3>Modifing Registers</h3>
             <CardTerminal>
               <pre>

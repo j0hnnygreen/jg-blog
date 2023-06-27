@@ -69,8 +69,15 @@
   opacity: 0.7;
 }
 
+.tableDiv {
+  overflow: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .dashedTable {
   border-collapse: collapse;
+  overflow: scroll;
 }
 
 .dashedTable th,

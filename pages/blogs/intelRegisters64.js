@@ -53,22 +53,22 @@ export default function Registers64Bit() {
               stroke="#000000"
               onClick={closeModal}
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth={0}></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
                 {" "}
-                <g clip-path="url(#clip0_429_11083)">
+                <g clipPath="url(#clip0_429_11083)">
                   {" "}
                   <path
                     d="M7 7.00006L17 17.0001M7 17.0001L17 7.00006"
                     stroke="#000000"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth={2.5}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   ></path>{" "}
                 </g>{" "}
                 <defs>
@@ -111,82 +111,78 @@ export default function Registers64Bit() {
           </BlogCard>
 
           <BlogCard heading="Register Convention">
-            <p>
-              <ul>
-                <li>
-                  <b>RAX</b> - Stores function return values.
-                </li>
-                <li>
-                  <b>RBX</b> - Base pointer to the data section.
-                </li>
-                <li>
-                  <b>RCX</b> - Counter for loop operations.
-                </li>
-                <li>
-                  <b>RSP</b> - Points to the current top of the stack.
-                </li>
-                <li>
-                  <b>RBP</b> - Points to the base of the stack frame.
-                </li>
-                <li>
-                  <b>RIP</b> - Points to the next instruction to be executed.
-                  Since the rip points to the next instruction, that means the
-                  instruction being pointed to by rip, and shown in the
-                  debugger, has not yet been executed.
-                </li>
-                <li>
-                  <b>RSI</b> - Source index pointer for string operations.
-                </li>
-                <li>
-                  <b>RDI</b> - Destination index pointer for string operations.
-                </li>
-              </ul>
-            </p>
+            <ul>
+              <li>
+                <b>RAX</b> - Stores function return values.
+              </li>
+              <li>
+                <b>RBX</b> - Base pointer to the data section.
+              </li>
+              <li>
+                <b>RCX</b> - Counter for loop operations.
+              </li>
+              <li>
+                <b>RSP</b> - Points to the current top of the stack.
+              </li>
+              <li>
+                <b>RBP</b> - Points to the base of the stack frame.
+              </li>
+              <li>
+                <b>RIP</b> - Points to the next instruction to be executed.
+                Since the rip points to the next instruction, that means the
+                instruction being pointed to by rip, and shown in the debugger,
+                has not yet been executed.
+              </li>
+              <li>
+                <b>RSI</b> - Source index pointer for string operations.
+              </li>
+              <li>
+                <b>RDI</b> - Destination index pointer for string operations.
+              </li>
+            </ul>
           </BlogCard>
 
           <BlogCard heading="Function Calling Convention">
-            <div>
-              <pre>
-                <table className={blogStyles.dashedTable}>
-                  <thead>
-                    <tr>
-                      <th>Platform</th>
-                      <th>Return Value</th>
-                      <th>1st Arg</th>
-                      <th>2nd Arg</th>
-                      <th>3rd Arg</th>
-                      <th>4th Arg</th>
-                      <th>5th Arg</th>
-                      <th>6th Arg</th>
-                      <th>More Args</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Linux</td>
-                      <td>RAX</td>
-                      <td>RDI</td>
-                      <td>RSI</td>
-                      <td>RDX</td>
-                      <td>RCX</td>
-                      <td>R8</td>
-                      <td>R9</td>
-                      <td>Pushed to Stack</td>
-                    </tr>
-                    <tr>
-                      <td>Windows</td>
-                      <td>RAX</td>
-                      <td>RCX</td>
-                      <td>RDX</td>
-                      <td>R8</td>
-                      <td>R9</td>
-                      <td>Pushed to Stack</td>
-                      <td>Pushed to Stack</td>
-                      <td>Pushed to Stack</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </pre>
+            <div className={blogStyles.tableDiv}>
+              <table className={blogStyles.dashedTable}>
+                <thead>
+                  <tr>
+                    <th>Platform</th>
+                    <th>Return Value</th>
+                    <th>1st Arg</th>
+                    <th>2nd Arg</th>
+                    <th>3rd Arg</th>
+                    <th>4th Arg</th>
+                    <th>5th Arg</th>
+                    <th>6th Arg</th>
+                    <th>More Args</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Linux</td>
+                    <td>RAX</td>
+                    <td>RDI</td>
+                    <td>RSI</td>
+                    <td>RDX</td>
+                    <td>RCX</td>
+                    <td>R8</td>
+                    <td>R9</td>
+                    <td>Pushed to Stack</td>
+                  </tr>
+                  <tr>
+                    <td>Windows</td>
+                    <td>RAX</td>
+                    <td>RCX</td>
+                    <td>RDX</td>
+                    <td>R8</td>
+                    <td>R9</td>
+                    <td>Pushed to Stack</td>
+                    <td>Pushed to Stack</td>
+                    <td>Pushed to Stack</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </BlogCard>
 
