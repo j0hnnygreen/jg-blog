@@ -145,7 +145,7 @@ export default function Registers64Bit() {
           </BlogCard>
 
           <BlogCard heading="Function Calling Convention">
-            <p>
+            <pre>
               <table className={blogStyles.dashedTable}>
                 <thead>
                   <tr>
@@ -185,7 +185,7 @@ export default function Registers64Bit() {
                   </tr>
                 </tbody>
               </table>
-            </p>
+            </pre>
           </BlogCard>
 
           <BlogCard heading="Further Reading">
