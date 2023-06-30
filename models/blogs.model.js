@@ -4,6 +4,7 @@ const databases = "Databases";
 const maths = "Mathematics";
 const networking = "Computer Networking";
 const reversing = "Reverse Engineering";
+const binExp = "Binary Exploitation";
 
 let BLOGS = [
   {
@@ -42,6 +43,12 @@ let BLOGS = [
     url: "/blogs/intelRegisters64",
     description:
       "Quick reference for x86-64 bit Intel General Purpose Registers.",
+  },
+  {
+    category: binExp,
+    name: "Linux Syscalls",
+    url: "/blogs/syscalls",
+    description: "Linux Syscall Table.",
   },
 ];
 

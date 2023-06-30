@@ -17,6 +17,7 @@ export const pageTitles = {
   },
   networking: { osimodel: "OSI Model" },
   reversing: { gdbintro: "GDB", registers64bit: "x86-64bit Registers" },
+  binExp: { syscalls: "Syscalls" },
 };
 
 export default function Layout({ children, page }) {
