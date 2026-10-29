@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import BlogCard from "../../../components/blog/BlogCard";
+import { SyscallX64Table, SyscallX86Table } from "../../../components/blog/SyscallTable";
 import styles from "../../../styles/Blog.module.css";
-import { SYSCALLS } from "../../../models/syscalls.model";
 
 export const metadata: Metadata = {
   title: "Linux Syscalls",
@@ -13,6 +13,10 @@ export default function LinuxSyscallsPage() {
       <h1 className="page-title">Linux Syscalls</h1>
       <div className={styles.article}>
         <BlogCard heading="Call Convention">
+          <p>
+            The system call convention for each architecture, with the
+            return-value and argument registers:
+          </p>
           <div className={styles.tableDiv}>
             <table className={styles.dashedTable}>
               <thead>
@@ -51,38 +55,26 @@ export default function LinuxSyscallsPage() {
               </tbody>
             </table>
           </div>
+          <p>
+            The syscall number is passed in <b>RAX</b> / <b>EAX</b>; the
+            tables below list the number in decimal and, in the{" "}
+            <b>RAX / EAX</b> column, in hexadecimal — the value to load into
+            the register before issuing the syscall.
+          </p>
         </BlogCard>
 
-        <BlogCard heading="x64 Syscalls Table">
-          <div className={styles.tableDiv}>
-            <table className={styles.altTable}>
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>SYSCALL NAME</th>
-                  <th>RAX</th>
-                  <th>RDI</th>
-                  <th>RSI</th>
-                  <th>RDX</th>
-                  <th>R10</th>
-                  <th>R8</th>
-                  <th>R9</th>
-                </tr>
-              </thead>
-              <tbody>
-                {SYSCALLS.map((syscall) => (
-                  <tr key={syscall.num}>
-                    <td>{syscall.num}</td>
-                    <td>{syscall.name}</td>
-                    <td>{syscall.rax}</td>
-                    {syscall.args.map((arg, index) => (
-                      <td key={index}>{arg}</td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+        <BlogCard heading="x86_64 (x64) Syscalls Table">
+          <SyscallX64Table />
+        </BlogCard>
+
+        <BlogCard heading="x86 (i386) Syscalls Table">
+          <p>
+            Argument registers follow the 32-bit <b>i386</b> convention
+            (<b>EBX</b>, <b>ECX</b>, <b>EDX</b>, <b>ESI</b>, <b>EDI</b>,{" "}
+            <b>EBP</b>). A dash means the syscall takes no arguments or no
+            prototype is recorded for it.
+          </p>
+          <SyscallX86Table />
         </BlogCard>
       </div>
     </div>

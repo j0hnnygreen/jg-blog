@@ -298,7 +298,7 @@ End of assembler dump.`}
               <br />
               {`   0x555555555139 <main+4>:	lea    rdi,[rip+0xec4]        # 0x555555556004
    0x555555555140 <main+11>:	mov    eax,0x0
-   0x0000555555555145 <main+16>:	call   0x555555555030 <printf@plt>
+   0x555555555145 <main+16>:	call   0x555555555030 <printf@plt>
    0x55555555514a <main+21>:	nop`}
             </pre>
           </CardTerminal>
