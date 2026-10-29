@@ -1,140 +1,241 @@
-.userInput {
-  margin-top: 20px;
-  padding: 20px;
+/* IP / Port configuration panel */
+.config {
+  width: min(700px, 100%);
+  margin: 0 auto 2.5rem;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 700px;
-  background: rgba(204, 203, 203, 0.589);
-  backdrop-filter: blur(10px);
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem 1.25rem;
+  padding: 1.25rem clamp(1rem, 3.5vw, 1.5rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-card);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1 1 200px;
+  min-width: 150px;
+}
+
+.label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.input {
+  min-height: 44px;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--border-strong);
   border-radius: 10px;
+  background: color-mix(in srgb, var(--text) 4%, transparent);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  width: 100%;
 }
 
-.userInput > label {
-  font-weight: bold;
+.input::placeholder {
+  color: var(--text-muted);
 }
 
-#ipAddr,
-#port,
-#changeBtn {
-  padding: 7px;
-  border-radius: 20px;
-  border: 2px solid #1172c4;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+.input:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
 }
 
-#changeBtn {
+.inputInvalid {
+  border-color: #e5484d;
+}
+
+.inputInvalid:focus-visible {
+  border-color: #e5484d;
+  box-shadow: 0 0 0 3px rgba(229, 72, 77, 0.25);
+}
+
+.submit {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 700;
+  font-size: 0.95rem;
   cursor: pointer;
+  transition: filter 0.15s ease, transform 0.1s ease;
 }
 
-.payloadSection {
-  max-width: 850px;
-  padding: 10px;
-  width: 92%;
-  background: rgba(204, 204, 204, 0.4);
-  backdrop-filter: blur(20px);
-  border-radius: 12px;
-  overflow-x: auto;
+.submit:hover {
+  filter: brightness(1.08);
 }
 
-.payloadTable {
-  font-size: 1.2rem;
-  max-width: 700px;
+.submit:active {
+  transform: translateY(1px);
 }
 
-.payloadTable td {
-  padding: 10px;
+/* Payload groups */
+.group {
+  margin-bottom: 2.5rem;
 }
 
-.name,
-.payload {
-  background: rgba(255, 255, 255, 0.4);
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 1.2rem;
+.groupHeading {
+  margin: 0 0 1rem;
+  padding-left: 0.9rem;
+  border-left: 3px solid var(--accent);
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.card {
+  padding: 1.1rem clamp(1rem, 3vw, 1.25rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  margin-bottom: 1rem;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
 }
 
 .name {
-  font-weight: bold;
-  color: rgba(46, 128, 46, 0.9);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
 }
 
-.payloadTable th {
-  text-align: left;
-  padding-bottom: 10px;
-  font-size: 1.5rem;
-}
-
-.copyText {
-  cursor: pointer;
-}
-
-.copyText:hover,
-.zshSTTY:hover {
-  opacity: 80%;
-}
-
-.copyText:active {
-  text-decoration: underline;
+.payload {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--text);
 }
 
 .highlight {
-  color: #c05d00;
-  font-weight: bold;
+  color: var(--accent);
+  font-weight: 700;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  padding: 0 0.2rem;
+  border-radius: 4px;
 }
 
-.zshSTTY {
-  color: rgb(6, 67, 146);
+/* Generic copy pill button */
+.copyBtn {
+  flex-shrink: 0;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.zshSTTY:active {
-  text-decoration: underline;
+.copyBtn:hover,
+.copyBtnDone {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
-@media only screen and (max-width: 600px) {
-  .userInput {
-    flex-direction: column;
-    width: 80%;
-    height: 300px;
-  }
+.copyBtnDone {
+  font-weight: 700;
 }
 
-@media (prefers-color-scheme: dark) {
-  .userInput,
-  .payloadSection {
-    background: rgba(10, 10, 10, 0.7);
-  }
+/* Interactive terminal upgrade section */
+.sectionCard {
+  width: min(850px, 100%);
+  margin: 0 auto 2.5rem;
+  padding: 1.25rem clamp(1rem, 3.5vw, 1.5rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-card);
+}
 
-  #ipAddr,
-  #port,
-  #changeBtn {
-    box-shadow: rgba(17, 114, 196, 0.12) 0px 2px 4px 0px,
-      rgba(17, 114, 196, 0.32) 0px 2px 16px 0px;
-  }
+.sectionHeading {
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.9rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--border);
+}
 
-  #ipAddr,
-  #port {
-    color: #9fef00;
-    caret-color: #9fef00;
-  }
+.sectionIntro {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+}
 
-  .name,
-  .payload {
-    background: rgba(0, 0, 0, 0.4);
-  }
+.shortcut {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding: 0.6rem 0.9rem;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--text) 4%, transparent);
+}
 
-  .zshSTTY {
-    color: #9fef00;
-  }
+.shortcutHint {
+  flex-basis: 100%;
+  margin: 0 0 -0.25rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
 
-  .highlight {
-    color: #1172c4;
-  }
+.shortcut code {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--accent);
+  overflow-wrap: anywhere;
+}
 
-  .name {
-    color: #ff7402c4;
-  }
+.empty {
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  width: 100%;
+  max-width: 560px;
+  text-align: center;
+  color: var(--text-muted);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  font-size: 1.05rem;
+}
+
+.emptyQuery {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  overflow-wrap: anywhere;
 }

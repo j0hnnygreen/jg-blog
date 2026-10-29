@@ -1,174 +1,150 @@
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 3rem;
-  text-align: center;
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
 }
 
-.blogCards {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 10px 20px;
-  max-width: 800px;
-  width: 92%;
-  background: rgba(196, 196, 196, 0.5);
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  font-size: 1.2rem;
+.articleCard {
+  width: min(800px, 100%);
+  padding: 1.5rem clamp(1rem, 4vw, 2rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-card);
 }
 
-.blogCards p {
-  text-align: justify;
-  text-justify: inter-word;
+.cardHeading {
+  margin: 0 0 0.9rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
 }
 
+.articleCard p {
+  margin: 0.65rem 0;
+}
+
+.articleCard ul,
+.articleCard ol {
+  margin: 0.65rem 0;
+  padding-left: 1.4rem;
+}
+
+.articleCard li {
+  margin-bottom: 0.35rem;
+}
+
+.articleCard em,
+.articleCard b {
+  color: var(--accent);
+}
+
+.articleCard mark {
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+  color: var(--text);
+  padding: 0.05rem 0.3rem;
+  border-radius: 4px;
+}
+
+.extLink {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.extLink:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Images inside articles */
 .blogImgs {
-  overflow: scroll;
-  background: rgba(144, 144, 144, 0.4);
-  backdrop-filter: blur(20px);
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 7px;
+  margin: 0.75rem 0;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--text) 3%, transparent);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .centerImg {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
+  max-width: 100%;
+  height: auto;
 }
 
-.blogCards em,
-.blogCards b {
-  color: rgb(0, 55, 100);
-}
-
-.extLink {
-  color: #1379ed;
-}
-
-.terminal {
-  margin: 10px;
-  padding: 10px;
-  color: green;
-  background: black;
-  border-radius: 5px;
-  overflow: scroll;
-}
-
-#closeSVG {
-  position: sticky;
-  top: 10px;
-  width: 25px;
-  height: 25px;
-  float: right;
-  margin-top: 10px;
-  margin-right: 10px;
-}
-#closeSVG:hover {
-  cursor: pointer;
-  opacity: 0.7;
-}
-
+/* Scrollable table wrapper — always swipes horizontally on small screens */
 .tableDiv {
-  overflow: auto;
-  padding-bottom: 20px;
-  max-height: 100vh;
+  margin: 1rem 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: calc(100vh - 4rem);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.tableDiv table {
+  width: 100%;
+  font-size: 0.95rem;
 }
 
 .dashedTable {
-  margin: auto;
   border-collapse: collapse;
-  overflow: scroll;
 }
 
 .dashedTable th,
 .dashedTable td {
-  border: 1px dashed #006b8c;
-  padding: 5px;
+  border: 1px dashed color-mix(in srgb, var(--accent) 40%, transparent);
+  padding: 0.5rem 0.6rem;
   text-align: center;
+  white-space: nowrap;
 }
 
 .dashedTable th {
-  color: #005169;
-}
-
-.altTableDiv {
-  border-radius: 7px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
 }
 
 .altTable {
   border-collapse: collapse;
+  min-width: 720px;
 }
 
 .altTable th,
+.altTable tr,
 .altTable td {
-  padding: 10px;
   text-align: center;
 }
 
-.altTable th {
+.altTable td {
+  white-space: nowrap;
+}
+
+.altTable thead th {
   position: sticky;
   top: 0;
   z-index: 1;
+  background: var(--surface-strong);
+  color: var(--accent);
+  padding: 0.55rem 0.65rem;
+  backdrop-filter: blur(6px);
 }
 
-.altTable tr:nth-child(even) {
-  background-color: rgba(143, 143, 143, 0.36);
+.altTable td {
+  padding: 0.45rem 0.65rem;
 }
 
-.altTable tr:nth-child(odd) {
-  background-color: rgba(56, 53, 53, 0.49);
+.altTable tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--text) 4%, transparent);
 }
 
-.altTable th:nth-child(even) {
-  background-color: rgba(155, 155, 155, 0.8);
-  backdrop-filter: blur(20px);
-}
-
-.altTable th:nth-child(odd) {
-  background-color: rgba(174, 174, 174, 0.8);
-  backdrop-filter: blur(20px);
-}
-
-.promptLine {
-  color: rgb(3, 179, 3);
-  font-weight: bold;
-}
-
-.terminal code {
-  font-size: 1rem;
-}
-.terminal pre {
-  margin: 0;
-}
-
-@media (prefers-color-scheme: dark) {
-  .blogCards {
-    background: rgba(20, 20, 20, 0.5);
-  }
-
-  .blogImgs {
-    background: rgba(255, 255, 255, 0.4);
-  }
-
-  .blogCards em,
-  .blogCards b {
-    color: #9fef00;
-  }
-
-  .dashedTable th,
-  .dashedTable td {
-    border: 1px dashed #7ab8ff;
-  }
-  .dashedTable th {
-    color: #7ae0ff;
-  }
-
-  .altTable th:nth-child(even) {
-    background-color: rgba(40, 64, 83, 0.8);
-  }
-
-  .altTable th:nth-child(odd) {
-    background-color: rgba(55, 73, 87, 0.8);
-  }
+.altTable tbody tr:hover {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
 }
