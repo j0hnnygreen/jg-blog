@@ -10,8 +10,9 @@
 .zoomTrigger img {
   display: block;
   margin-inline: auto;
-  max-width: 100%;
+  width: auto;
   height: auto;
+  max-width: 100%;
 }
 
 .overlay {

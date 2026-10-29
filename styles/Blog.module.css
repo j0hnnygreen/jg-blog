@@ -74,8 +74,9 @@
 .centerImg {
   display: block;
   margin-inline: auto;
-  max-width: 100%;
+  width: auto;
   height: auto;
+  max-width: 100%;
 }
 
 /* Scrollable table wrapper — always swipes horizontally on small screens */
