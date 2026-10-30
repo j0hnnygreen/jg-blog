@@ -97,7 +97,7 @@ postgres-#`}</pre>
           <CardTerminal title="psql">
             <pre>{`postgres=# \\c testdb;
 
-psql (9.2.4)
+psql (17.6)
 Type "help" for help.
 You are now connected to database "testdb" as user "postgres".
 

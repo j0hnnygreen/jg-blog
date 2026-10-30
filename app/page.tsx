@@ -19,6 +19,12 @@ const SHORTCUTS = [
     title: "~/reverse-shells",
     description: "Reverse shell payloads for any IP and port, ready to copy.",
   },
+  {
+    href: "/resources/chmod",
+    title: "~/chmod",
+    description:
+      "Interactive Linux permission calculator with setuid/setgid/sticky support.",
+  },
 ] as const;
 
 export default function Home() {
@@ -29,9 +35,10 @@ export default function Home() {
 
         <p className={styles.tagline}>
           I&apos;m a <strong>Cybersecurity Enthusiast</strong> and a{" "}
-          <strong>Full-Stack Developer</strong>. This website contains tools and
-          resources about Cybersecurity and other Computer Science related
-          topics.
+          <strong>Full-Stack Developer</strong>. This website contains{" "}
+          <strong>blogs</strong>, <strong>tools</strong> and{" "}
+          <strong>resources</strong> about Cybersecurity, Full-Stack
+          Development and the mathematics behind computer science.
         </p>
 
         <div className={styles.cards}>

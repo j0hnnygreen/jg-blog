@@ -110,7 +110,7 @@ export default function OsiModelPage() {
                 segments into data the session layer can consume.
               </p>
               <p>
-                <i>Protocols</i> used in Session Layer are:{" "}
+                <i>Protocols</i> used in Transport Layer are:{" "}
                 <em>
                   Transmission Control Protocol (TCP) and User Datagram Protocol
                   (UDP)

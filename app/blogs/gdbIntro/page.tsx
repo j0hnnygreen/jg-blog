@@ -420,7 +420,7 @@ End of assembler dump.`}
    0x55555555514a <main+21>:	nop`}
             </pre>
           </CardTerminal>
-          <h3>Modifing Memory</h3>
+          <h3>Modifying Memory</h3>
           <p>
             The <b>set</b> command is used to modify memory, also optionally
             specifying a C-style type in order to specify the length to write.
@@ -493,7 +493,7 @@ rcx            0x7ffff7fab718      140737353791256`}
             a $. Also note that the &quot;info r&quot; command required no such
             prefix.
           </p>
-          <h3>Modifing Registers</h3>
+          <h3>Modifying Registers</h3>
           <CardTerminal>
             <pre>
               {`(gdb) set $rax = 0xdeadbeeff00dface
