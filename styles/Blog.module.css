@@ -16,6 +16,11 @@
   box-shadow: var(--shadow-card);
 }
 
+/* Same card, stretched for big data tables on reference pages. */
+.articleCardWide {
+  width: min(1360px, 100%);
+}
+
 .cardHeading {
   margin: 0 0 0.9rem;
   padding-bottom: 0.65rem;
@@ -79,7 +84,8 @@
   max-width: 100%;
 }
 
-/* Scrollable table wrapper — always swipes horizontally on small screens */
+/* Scrollable table wrapper — swipes horizontally whenever the table needs
+   more room than its card provides. */
 .tableDiv {
   margin: 1rem 0;
   border: 1px solid var(--border);
@@ -94,6 +100,21 @@
 .tableDiv table {
   width: 100%;
   font-size: 0.95rem;
+}
+
+/* Comfortable sizing on large desktop screens. */
+@media (min-width: 1200px) {
+  .tableDiv table {
+    font-size: 1rem;
+  }
+
+  .altTable td {
+    padding: 0.55rem 0.8rem;
+  }
+
+  .altTable thead th {
+    padding: 0.65rem 0.8rem;
+  }
 }
 
 .dashedTable {

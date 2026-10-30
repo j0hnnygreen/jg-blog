@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Registers64BitPage() {
   return (
-    <div className="site-main">
+    <div className="site-main site-main--wide">
       <h1 className="page-title">Intel x86-64 bit General Purpose Registers</h1>
       <div className={styles.article}>
         <BlogCard heading="Registers">
