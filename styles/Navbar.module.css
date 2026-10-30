@@ -2,9 +2,10 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: color-mix(in srgb, var(--surface) 88%, transparent);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  /* Nearly opaque so content scrolling underneath stays readable. */
+  background: var(--surface-strong);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
 
@@ -77,6 +78,51 @@
 
 .menuButton:hover {
   border-color: var(--border-strong);
+}
+
+/* Right-aligned container for the theme toggle next to the hamburger. */
+.actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.themeToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.themeToggle:hover {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+}
+
+/* Show the icon matching the ACTIVE preference:
+   sun = forced light, moon = forced dark, monitor = system scheme. */
+.iconSun,
+.iconMoon,
+.iconSystem {
+  display: none;
+}
+
+:global(html[data-theme-pref="light"]) .iconSun,
+:global(html[data-theme-pref="dark"]) .iconMoon,
+:global(html[data-theme-pref="system"]) .iconSystem,
+:global(html:not([data-theme-pref])) .iconSystem {
+  display: block;
 }
 
 .mobileMenu {

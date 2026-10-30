@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import ThemeToggle from "./ThemeToggle";
 import styles from "../styles/Navbar.module.css";
 
 const LINKS = [
@@ -57,6 +58,10 @@ export default function Navbar() {
         <nav className={styles.links} aria-label="Primary">
           {renderedLinks}
         </nav>
+
+        <div className={styles.actions}>
+          <ThemeToggle />
+        </div>
 
         <button
           type="button"
