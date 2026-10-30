@@ -7,14 +7,19 @@ export interface ListingItem {
   name: string;
   url: string;
   description: string;
+  /** Optional topic labels; matched by search when present. */
+  tags?: string[];
 }
 
 function matches(item: ListingItem, query: string): boolean {
   const q = query.trim().toLowerCase();
   if (q === "") return true;
-  return [item.category, item.name, item.description].some((field) =>
-    field.toLowerCase().includes(q),
-  );
+  return [
+    item.category,
+    item.name,
+    item.description,
+    ...(item.tags ?? []),
+  ].some((field) => field.toLowerCase().includes(q));
 }
 
 function Card({ item }: { item: ListingItem }) {
