@@ -1,0 +1,69 @@
+.zoomTrigger {
+  display: block;
+  margin-inline: auto;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.zoomTrigger img {
+  display: block;
+  margin-inline: auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(5, 8, 13, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.dialog {
+  position: relative;
+  max-width: min(1100px, 100%);
+  max-height: calc(100dvh - 3rem);
+  overflow: auto;
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-strong);
+  background: var(--surface-strong);
+}
+
+.dialogImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.closeBtn {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  float: right;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-left: 0.5rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  background: var(--surface-strong);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}

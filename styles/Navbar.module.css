@@ -1,0 +1,178 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  /* Nearly opaque so content scrolling underneath stays readable. */
+  background: var(--surface-strong);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  position: relative;
+  width: min(1080px, 100% - 2rem);
+  margin-inline: auto;
+  min-height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.brandMark {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.links {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.link {
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.link:hover {
+  color: var(--text);
+  background: color-mix(in srgb, var(--text) 8%, transparent);
+}
+
+.linkActive {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.menuButton {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.menuButton:hover {
+  border-color: var(--border-strong);
+}
+
+/* Right-aligned container for the theme toggle next to the hamburger. */
+.actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.themeToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.themeToggle:hover {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+}
+
+/* Show the icon matching the ACTIVE preference:
+   sun = forced light, moon = forced dark, monitor = system scheme. */
+.iconSun,
+.iconMoon,
+.iconSystem {
+  display: none;
+}
+
+:global(html[data-theme-pref="light"]) .iconSun,
+:global(html[data-theme-pref="dark"]) .iconMoon,
+:global(html[data-theme-pref="system"]) .iconSystem,
+:global(html:not([data-theme-pref])) .iconSystem {
+  display: block;
+}
+
+.mobileMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.6rem 0.75rem 0.75rem;
+  background: var(--surface-strong);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transform: translateY(0);
+}
+
+.mobileMenu .link {
+  padding: 0.85rem 1.1rem;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.mobileMenuClosed {
+  transform: translateY(-8px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mobileMenu {
+    transition:
+      transform 0.16s ease,
+      opacity 0.16s ease;
+  }
+}
+
+@media (max-width: 640px) {
+  .links {
+    display: none;
+  }
+
+  .menuButton {
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 641px) {
+  .mobileMenu {
+    display: none;
+  }
+}

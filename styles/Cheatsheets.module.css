@@ -1,75 +1,93 @@
-.cardsFlex {
+.cards {
   display: flex;
   flex-direction: column;
-  row-gap: 30px;
-  max-width: 800px;
-  width: 92%;
+  gap: 1.75rem;
+  width: min(800px, 100%);
+  margin-inline: auto;
 }
 
-.card1 {
+.card {
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
-  padding: 20px;
-  border-radius: 10px;
-  background: rgba(211, 211, 211, 0.4);
-  backdrop-filter: blur(7px);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  gap: 1rem;
+  padding: 1.4rem clamp(1rem, 3.5vw, 1.6rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-card);
 }
 
 .heading {
-  font-size: 1.5rem;
   margin: 0;
-}
-
-.card2 {
-  width: 100%;
-  padding: 10px;
-  word-wrap: break-word;
-  border-radius: 10px;
-}
-
-.card2 td,
-.card2 th {
-  padding: 10px;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-}
-
-.command {
-  color: #075486;
-  font-weight: bold;
-  font-family: "Courier New", Courier, monospace;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
 }
 
 .note {
-  color: rgb(98, 0, 255);
   margin: 0;
-  background: rgba(255, 255, 255, 0.3);
-  padding: 5px;
-  border-radius: 5px;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  color: var(--text);
+  font-size: 0.92rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  .card1 {
-    background: rgba(25, 25, 25, 0.5);
-  }
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
 
-  .card2 td,
-  .card2 th {
-    background: rgba(0, 0, 0, 0.6);
-  }
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 0.25rem 1rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--text) 4%, transparent);
+}
 
-  .command {
-    color: #9fef00;
-  }
+.command {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--accent);
+  overflow-wrap: anywhere;
+  align-self: center;
+}
 
-  .note {
-    color: rgb(255, 102, 0);
-    background: rgba(0, 0, 0, 0.3);
+.description {
+  font-size: 0.94rem;
+  color: var(--text-muted);
+  align-self: center;
+  overflow-wrap: anywhere;
+}
+
+.empty {
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  width: 100%;
+  max-width: 560px;
+  text-align: center;
+  color: var(--text-muted);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  font-size: 1.05rem;
+}
+
+.emptyQuery {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .row {
+    grid-template-columns: 1fr;
   }
 }
