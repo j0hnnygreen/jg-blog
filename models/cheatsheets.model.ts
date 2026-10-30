@@ -1,16 +1,21 @@
 // Generated from models/cheatsheets.model.js (legacy data preserved verbatim)
-export interface TmuxCommand {
+// Shared shape for every searchable cheatsheet in the site (tmux, bash, nmap…).
+export interface CheatCommand {
   command: string;
   description: string;
   descriptionWords: string;
 }
 
-export interface TmuxCard {
+export interface CheatSheet {
   title: string;
-  commands: TmuxCommand[];
+  commands: CheatCommand[];
   descriptionWords: string;
   note?: string;
 }
+
+// Backwards-compatible aliases for the legacy tmux names.
+export type TmuxCommand = CheatCommand;
+export type TmuxCard = CheatSheet;
 
 export const TMUX: TmuxCard[] = [
  {
@@ -23,7 +28,7 @@ export const TMUX: TmuxCard[] = [
    },
    {
     "command": "tmux new -s [session-name]",
-    "description": "Sart a new session with a given session name",
+    "description": "Start a new session with a given session name",
     "descriptionWords": "new session, tmux session, new session name, "
    }
   ],
@@ -44,7 +49,7 @@ export const TMUX: TmuxCard[] = [
    },
    {
     "command": "ctrl b d",
-    "description": "Dettach a tmux session",
+    "description": "Detach a tmux session",
     "descriptionWords": "dettach session"
    },
    {
